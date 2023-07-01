@@ -24,9 +24,11 @@ function List({
   const [distance, setDistance] = useState(4);
   const [elRefs, setElRefs] = useState([]);
 
+  //Filter places based on distance
   const filteredPlaces = places?.filter((place) => place.distance <= distance);
 
   useEffect(() => {
+    // Create and initialize refs for each place
     const refs = Array(places?.length)
       .fill()
       .map((_, i) => elRefs[i] || createRef());
@@ -44,6 +46,7 @@ function List({
         </div>
       ) : (
         <>
+          {/* Type filter */}
           <FormControl className={classes.formControl}>
             <InputLabel>Type</InputLabel>
             <Select value={type} onChange={(e) => setType(e.target.value)}>
@@ -52,6 +55,8 @@ function List({
               <MenuItem value="attractions">Attractions</MenuItem>
             </Select>
           </FormControl>
+          
+           {/* Rating filter */}
           <FormControl className={classes.formControl}>
             <InputLabel>Rating</InputLabel>
             <Select value={rating} onChange={(e) => setRating(e.target.value)}>
@@ -61,6 +66,8 @@ function List({
               <MenuItem value={4.5}>Above 4.5</MenuItem>
             </Select>
           </FormControl>
+
+           {/* Distance filter */}
           <FormControl className={classes.formControl}>
             <InputLabel>Distance (km)</InputLabel>
             <Select
@@ -80,6 +87,8 @@ function List({
               <MenuItem value={10}>10 km</MenuItem>
             </Select>
           </FormControl>
+          
+           {/* Grid of places */}
           <Grid container spacing={3} className={classes.list}>
             {filteredPlaces?.map((place, i) => (
               <Grid ref={elRefs[i]} item key={i} xs={12}>

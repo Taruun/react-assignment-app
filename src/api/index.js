@@ -1,5 +1,6 @@
 import axios from "axios";
 
+// For getting places details from rapidapi
 export const getPlacesData = async (type, sw, ne) => {
   try {
     const {
@@ -25,6 +26,7 @@ export const getPlacesData = async (type, sw, ne) => {
   }
 };
 
+// For getting weather details from rapidapi
 export const getWeatherData = async (lat, lng) => {
   try {
     if (lat && lng) {
