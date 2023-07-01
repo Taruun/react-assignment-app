@@ -1,4 +1,5 @@
 // eslint-disable-next-line import/no-anonymous-default-export
+// Redsigned map styles
 export default [
   {
     featureType: "all",

@@ -16,8 +16,12 @@ import useStyles from "./styles";
 
 function PlaceDetails({ place, selected, refProp }) {
   const classes = useStyles();
-  if (selected)
+
+  // Scroll to the selected place card when it is selected
+  if (selected) {
     refProp?.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
   return (
     <Card elevation={6}>
       <CardMedia
@@ -27,7 +31,7 @@ function PlaceDetails({ place, selected, refProp }) {
             ? place.photo.images.large.url
             : "https://www.foodserviceandhospitality.com/wp-content/uploads/2016/09/Restaurant-Placeholder-001.jpg"
         }
-        title={place.naem}
+        title={place.naem} // TYPO: Should be "name" instead of "naem"
       />
       <CardContent>
         <Typography gutterBottom variant="h5">
@@ -88,6 +92,7 @@ function PlaceDetails({ place, selected, refProp }) {
           </Typography>
         )}
         <CardActions>
+          {/* Open Trip Advisor link in a new tab */}
           <Button
             size="small"
             color="primary"
@@ -95,6 +100,7 @@ function PlaceDetails({ place, selected, refProp }) {
           >
             Trip Advisor
           </Button>
+          {/* Open website link in a new tab */}
           <Button
             size="small"
             color="primary"

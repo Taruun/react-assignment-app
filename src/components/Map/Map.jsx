@@ -6,13 +6,21 @@ import Rating from "@material-ui/lab/Rating";
 
 import mapStyles from "./mapStyles";
 import useStyles from "./styles.js";
-// prettier-ignore
-const Map = ({coords, places, setCoords,setBounds, setChildClicked, weatherData,}) => {
+
+const Map = ({
+  coords,
+  places,
+  setCoords,
+  setBounds,
+  setChildClicked,
+  weatherData,
+}) => {
   const isDesktop = useMediaQuery("(min-width:600px)");
   const classes = useStyles();
 
   return (
     <div className={classes.mapContainer}>
+      {/* Google Map component */}
       <GoogleMapReact
         bootstrapURLKeys={{ key: process.env.REACT_APP_GOOGLE_MAP_API_KEY }}
         defaultCenter={coords}
@@ -27,11 +35,13 @@ const Map = ({coords, places, setCoords,setBounds, setChildClicked, weatherData,
           fullscreenControl: true,
         }}
         onChange={(e) => {
+          // Update coordinates and bounds when the map view changes
           setCoords({ lat: e.center.lat, lng: e.center.lng });
           setBounds({ ne: e.marginBounds.ne, sw: e.marginBounds.sw });
         }}
         onChildClick={(child) => setChildClicked(child)}
       >
+        {/* Markers for places */}
         {places.length &&
           places.map((place, i) => (
             <div
@@ -41,15 +51,16 @@ const Map = ({coords, places, setCoords,setBounds, setChildClicked, weatherData,
               key={i}
             >
               {!isDesktop ? (
+                // Display location icon for mobile devices
                 <LocationOnOutlinedIcon color="primary" fontSize="large" />
               ) : (
+                // Display place details in a paper component for desktop devices
                 <Paper color="black" elevation={3} className={classes.paper}>
                   <Typography
                     className={classes.typography}
                     variant="subtitle2"
                     gutterBottom
                   >
-                    {" "}
                     {place.name}
                   </Typography>
                   <img
@@ -70,6 +81,8 @@ const Map = ({coords, places, setCoords,setBounds, setChildClicked, weatherData,
               )}
             </div>
           ))}
+
+        {/* Weather icons */}
         {weatherData?.list?.length &&
           weatherData.list.map((data, i) => (
             <div key={i} lat={data.coord.lat} lng={data.coord.lon}>

@@ -13,6 +13,8 @@ import SearchIcon from "@material-ui/icons/Search";
 import useStyles from "./styles.js";
 
 const Header = ({ setCoordinates }) => {
+
+  //Autocomplete is implemented
   const [autocomplete, setAutoComplete] = useState(null);
   const onLoad = (autoC) => setAutoComplete(autoC);
   const onPlaceChanged = () => {
