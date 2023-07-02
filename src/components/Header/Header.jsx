@@ -15,6 +15,7 @@ import useStyles from "./styles.js";
 const Header = ({ setCoordinates }) => {
 
   //Autocomplete is implemented
+  //Need to resolve google search api payment issue
   const [autocomplete, setAutoComplete] = useState(null);
   const onLoad = (autoC) => setAutoComplete(autoC);
   const onPlaceChanged = () => {
@@ -26,6 +27,7 @@ const Header = ({ setCoordinates }) => {
   const classes = useStyles();
 
   return (
+    //Header
     <AppBar position="static">
       <Toolbar className={classes.toolbar}>
         <Typography variant="h5" className={classes.title}>
