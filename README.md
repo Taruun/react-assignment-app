@@ -2,7 +2,7 @@
 
 This is a React-based web application that allows users to explore different places and view restaurants on a map. The application makes use of the Google Maps API for map functionality and integrates with various data sources to fetch information about places through Rapid API.
 
-Please note that the Google Search functionality is currently not rendering due to issues with the Google Search API and payment.
+Please note that the Google Search functionality is currently not rendering due to issues with the Google Search API payment.
 
 ## Features
 
