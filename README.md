@@ -22,8 +22,8 @@ The application is deployed on Netlify and can be accessed using the following l
 
 To run the application locally, follow these steps:
 
-1. Clone the repository: `git clone https://github.com/your-username/react-places-explorer.git`
-2. Navigate to the project directory: `cd react-places-explorer`
+1. Clone the repository: `git clone https://github.com/Taruun/react-assignment-app.git`
+2. Navigate to the project directory: `cd react-assignment-app`
 3. Install the dependencies: `npm install`
 4. Start the development server: `npm start`
 5. Open your browser and visit `http://localhost:3000` to view the application.
