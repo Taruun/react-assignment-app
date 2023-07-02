@@ -16,7 +16,7 @@ Please note that the Google Search functionality is currently not rendering due 
 
 The application is deployed on Netlify and can be accessed using the following link: 
 [Trip Advisor ](https://trip-advisor-app.netlify.app/)
-[Github] (https://github.com/Taruun/react-assignment-app)
+[Github](https://github.com/Taruun/react-assignment-app)
 
 ## Installation
 
